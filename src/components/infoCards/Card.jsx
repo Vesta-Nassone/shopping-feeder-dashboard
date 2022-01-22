@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import OverlayTrigger from "react-bootstrap/esm/OverlayTrigger";
+import Tooltip from "react-bootstrap/esm/Tooltip";
 
 // Define the Option and Required props
 const propTypes = {
@@ -9,6 +11,16 @@ const propTypes = {
 };
 
 export const Card = ({ className = "", children, cardTitle }) => {
-	return <div className={`${className} ${"info-box"}`}>{children}</div>;
+	return (
+		<OverlayTrigger
+			delay={{ hide: 400, show: 300 }}
+			overlay={(props) => (
+				
+			)}
+			placement="bottom"
+		>
+			<div className={`${className} ${"info-box"}`}>{children}</div>
+		</OverlayTrigger>
+	);
 };
 Card.propTypes = propTypes;
