@@ -1,5 +1,10 @@
 import React from "react";
+import "./TopCardRows.css";
 
 export default function TopCardRows() {
-	return <div></div>;
+    return <div className="row">
+        <div className="col">
+            Col 1
+        </div>
+    </div>;
 }
