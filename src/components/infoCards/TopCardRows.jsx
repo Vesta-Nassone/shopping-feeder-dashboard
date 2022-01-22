@@ -88,7 +88,7 @@ export default function TopCardRows() {
 			<div className="col px-2">
 				<Card cardTitle="Add New Store">
 					<span className="info-box-icon">
-						<i className="bi bi-plus" />
+						<i className="bi bi-cart-plus" />
 					</span>
 					<div className="info-box-text center">
 						<p>Add New Store</p>
