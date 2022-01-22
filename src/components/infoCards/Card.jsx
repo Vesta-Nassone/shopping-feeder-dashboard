@@ -13,7 +13,7 @@ const propTypes = {
 export const Card = ({ className = "", children, cardTitle }) => {
 	return (
 		<OverlayTrigger
-			delay={{ hide: 400, show: 300 }}
+			delay={{ hide: 100, show: 10 }}
 			overlay={(props) => (
 				<Tooltip {...props}>
 					{`by following this link, you will be redirected to ${cardTitle}`}
