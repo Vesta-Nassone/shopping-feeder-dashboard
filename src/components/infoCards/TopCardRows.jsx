@@ -41,11 +41,8 @@ export default function TopCardRows() {
 				</Card>
 			</div>
 			<div className="col px-2">
-				<Card cardTitle="Merchants">
-					<span
-						className="info-box-icon"
-						style={{ backgroundColor: "rgb(122,171,65)" }}
-					>
+				<Card cardTitle="Referrals" className="alt-box-color">
+					<span className="info-box-icon alt-icon-color">
 						<i className="bi bi-graph-up-arrow" />
 					</span>
 					<div className="info-box-text">
@@ -55,11 +52,8 @@ export default function TopCardRows() {
 				</Card>
 			</div>
 			<div className="col px-2">
-				<Card cardTitle="Merchants">
-					<span
-						className="info-box-icon"
-						style={{ backgroundColor: "rgb(122,171,65)" }}
-					>
+				<Card cardTitle="Sales" className="alt-box-color">
+					<span className="info-box-icon alt-icon-color">
 						<i className="bi bi-cart3" />
 					</span>
 					<div className="info-box-text">
@@ -72,7 +66,7 @@ export default function TopCardRows() {
 
 			{/* Start of Second row */}
 			<div className="col px-2">
-				<Card cardTitle="Merchants">
+				<Card cardTitle="Add New Merchant">
 					<span className="info-box-icon">
 						<i className="bi bi-plus" />
 					</span>
@@ -82,7 +76,7 @@ export default function TopCardRows() {
 				</Card>
 			</div>
 			<div className="col px-2">
-				<Card cardTitle="Merchants">
+				<Card cardTitle="Reassign Merchants">
 					<span className="info-box-icon">
 						<i className="bi bi-person-badge" />
 					</span>
@@ -102,11 +96,8 @@ export default function TopCardRows() {
 				</Card>
 			</div>
 			<div className="col px-2">
-				<Card cardTitle="Card 4">
-					<span
-						className="info-box-icon"
-						style={{ backgroundColor: "rgb(122,171,65)" }}
-					>
+				<Card cardTitle="Card 4" className="alt-box-color">
+					<span className="info-box-icon alt-icon-color">
 						<i className="bi bi-bar-chart-fill" />
 					</span>
 					<div className="info-box-text">
@@ -116,11 +107,8 @@ export default function TopCardRows() {
 				</Card>
 			</div>
 			<div className="col px-2">
-				<Card cardTitle="Card 5">
-					<span
-						className="info-box-icon"
-						style={{ backgroundColor: "rgb(122,171,65)" }}
-					>
+				<Card cardTitle="Card 5" className="alt-box-color">
+					<span className="info-box-icon alt-icon-color">
 						<i className="bi bi-bar-chart-fill" />
 					</span>
 					<div className="info-box-text">
