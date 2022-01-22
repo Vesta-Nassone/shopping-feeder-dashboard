@@ -1,13 +1,14 @@
 import React from "react";
+import { Card } from "./Card";
 import "./TopCardRows.css";
 
 export default function TopCardRows() {
 	/* This component will be a Bootstrap grid, that will hold the Top 2 rows of cards. */
 	return (
-        <div className="row mx-n5 row-cols-1 row-cols-sm-2 row-cols-lg-5 pb-4 gy-4">
-            {/* Start of first row */}
+		<div className="row mx-n5 row-cols-1 row-cols-sm-2 row-cols-lg-5 pb-4 gy-4">
+			{/* Start of first row */}
 			<div className="col px-2">
-				<div className="info-box">
+				<Card cardTitle="Merchants">
 					<span className="info-box-icon">
 						<i className="bi bi-people" />
 					</span>
@@ -15,7 +16,7 @@ export default function TopCardRows() {
 						<h6>20</h6>
 						<p>Merchants</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			<div className="col px-2">
 				<div className="info-box">
@@ -72,10 +73,10 @@ export default function TopCardRows() {
 						<p>Total Sales Today</p>
 					</div>
 				</div>
-            </div>
-            {/* End of first row */}
+			</div>
+			{/* End of first row */}
 
-            {/* Start of Second row */}
+			{/* Start of Second row */}
 			<div className="col px-2">
 				<div className="info-box">
 					<span className="info-box-icon">
@@ -139,8 +140,8 @@ export default function TopCardRows() {
 						<p>Card 5</p>
 					</div>
 				</div>
-            </div>
-            {/* End of second row */}
+			</div>
+			{/* End of second row */}
 		</div>
 	);
 }
