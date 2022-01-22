@@ -1,8 +1,13 @@
+/* Define the height of each card, the width is defined by the gutter.
+and Specify the bg color.
+the boostrap colors were a bit lighter, so I overrode them. */
 .info-box {
 	height: 70px;
 	background-color: rgb(0, 188, 212);
 }
 
+/* Wrap the icon and text in a flexbox.
+Define the width and bg color of the icon container. */
 .info-box-icon {
 	display: flex;
 	justify-content: center;
@@ -14,6 +19,7 @@
 	background: rgb(0, 165, 186);
 	color: white;
 }
+/* Change the size and color of text. */
 .info-box-text {
 	float: left;
 	color: white;
@@ -22,10 +28,13 @@
 	padding: 5px;
 }
 
+/* Center the text vertically */
 .center {
 	padding-top: 32px;
 	font-weight: bold;
 }
+/* The last two boxes on each row have a green color.
+I didn't see any relationship between the color and the card, so I just added an alternate color to cater for those boxes and icons */
 .alt-icon-color {
 	background-color: rgb(122, 171, 65);
 }
