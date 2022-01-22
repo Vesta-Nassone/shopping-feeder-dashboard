@@ -14,3 +14,10 @@
 	background: rgb(0, 165, 186);
 	color: white;
 }
+.info-box-text {
+	float: left;
+	color: white;
+	font-size: 12px;
+	line-height: 5px;
+	padding: 5px;
+}
