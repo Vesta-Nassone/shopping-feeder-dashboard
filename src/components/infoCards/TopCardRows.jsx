@@ -19,6 +19,17 @@ export default function TopCardRows() {
 			<div className="col px-2">
 				<div className="info-box">
 					<span className="info-box-icon">
+						<i className="bi bi-shop" />
+					</span>
+					<div className="info-box-text">
+						<h6>40</h6>
+						<p>Stores</p>
+					</div>
+				</div>
+			</div>
+			<div className="col px-2">
+				<div className="info-box">
+					<span className="info-box-icon">
 						<i className="bi bi-exclamation-triangle" />
 					</span>
 					<div className="info-box-text">
