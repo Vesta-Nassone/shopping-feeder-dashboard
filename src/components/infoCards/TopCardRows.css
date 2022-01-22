@@ -26,3 +26,9 @@
 	padding-top: 32px;
 	font-weight: bold;
 }
+.alt-icon-color {
+	background-color: rgb(122, 171, 65);
+}
+.alt-box-color {
+	background-color: rgb(139, 195, 74);
+}
