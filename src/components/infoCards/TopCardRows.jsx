@@ -19,7 +19,7 @@ export default function TopCardRows() {
 				</Card>
 			</div>
 			<div className="col px-2">
-				<div className="info-box">
+				<Card cardTitle="Stores">
 					<span className="info-box-icon">
 						<i className="bi bi-shop" />
 					</span>
@@ -27,10 +27,10 @@ export default function TopCardRows() {
 						<h6>40</h6>
 						<p>Stores</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			<div className="col px-2">
-				<div className="info-box">
+				<Card cardTitle="Stores with product errors">
 					<span className="info-box-icon">
 						<i className="bi bi-exclamation-triangle" />
 					</span>
@@ -38,13 +38,10 @@ export default function TopCardRows() {
 						<h6>5</h6>
 						<p>Stores with Product Errors</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			<div className="col px-2">
-				<div
-					className="info-box"
-					style={{ backgroundColor: "rgb(139,195,74)" }}
-				>
+				<Card cardTitle="Merchants">
 					<span
 						className="info-box-icon"
 						style={{ backgroundColor: "rgb(122,171,65)" }}
@@ -55,13 +52,10 @@ export default function TopCardRows() {
 						<h6>15</h6>
 						<p>Total Referrals Today</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			<div className="col px-2">
-				<div
-					className="info-box"
-					style={{ backgroundColor: "rgb(139,195,74)" }}
-				>
+				<Card cardTitle="Merchants">
 					<span
 						className="info-box-icon"
 						style={{ backgroundColor: "rgb(122,171,65)" }}
@@ -72,46 +66,43 @@ export default function TopCardRows() {
 						<h6>500</h6>
 						<p>Total Sales Today</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			{/* End of first row */}
 
 			{/* Start of Second row */}
 			<div className="col px-2">
-				<div className="info-box">
+				<Card cardTitle="Merchants">
 					<span className="info-box-icon">
 						<i className="bi bi-plus" />
 					</span>
 					<div className="info-box-text center">
 						<p>Add New Merchant</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			<div className="col px-2">
-				<div className="info-box">
+				<Card cardTitle="Merchants">
 					<span className="info-box-icon">
 						<i className="bi bi-person-badge" />
 					</span>
 					<div className="info-box-text center">
 						<p>Reassign Merchant</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			<div className="col px-2">
-				<div className="info-box">
+				<Card cardTitle="Add New Store">
 					<span className="info-box-icon">
-						<i className="bi bi-cart-plus" />
+						<i className="bi bi-plus" />
 					</span>
 					<div className="info-box-text center">
 						<p>Add New Store</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			<div className="col px-2">
-				<div
-					className="info-box"
-					style={{ backgroundColor: "rgb(139,195,74)" }}
-				>
+				<Card cardTitle="Card 4">
 					<span
 						className="info-box-icon"
 						style={{ backgroundColor: "rgb(122,171,65)" }}
@@ -122,13 +113,10 @@ export default function TopCardRows() {
 						<h6>300</h6>
 						<p>Card 4</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			<div className="col px-2">
-				<div
-					className="info-box"
-					style={{ backgroundColor: "rgb(139,195,74)" }}
-				>
+				<Card cardTitle="Card 5">
 					<span
 						className="info-box-icon"
 						style={{ backgroundColor: "rgb(122,171,65)" }}
@@ -139,7 +127,7 @@ export default function TopCardRows() {
 						<h6>400</h6>
 						<p>Card 5</p>
 					</div>
-				</div>
+				</Card>
 			</div>
 			{/* End of second row */}
 		</div>
