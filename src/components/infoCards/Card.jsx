@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // Define the Option and Required props
 const propTypes = {
 	className: PropTypes.string,
-	cardTitle: PropTypes.string,
+	cardTitle: PropTypes.string.isRequired,
 	children: PropTypes.node,
 };
 
