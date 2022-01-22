@@ -15,7 +15,9 @@ export const Card = ({ className = "", children, cardTitle }) => {
 		<OverlayTrigger
 			delay={{ hide: 400, show: 300 }}
 			overlay={(props) => (
-				
+				<Tooltip {...props}>
+					{`by following this link, you will be redirected to ${cardTitle}`}
+				</Tooltip>
 			)}
 			placement="bottom"
 		>
