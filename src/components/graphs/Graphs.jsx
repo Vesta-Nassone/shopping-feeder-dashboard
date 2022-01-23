@@ -16,6 +16,39 @@ import {
 	referralsData,
 } from "../../data/dummyData";
 
+// Holds the colors of the graphs to be dynamically allocated.
+const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
+/* 
+	This method will dynamically create Line Charts so I don't have to hard code them.
+ */
+const createLineCharts = (dataSource) => {
+	// get the keys from the data source
+	const keysArray = Object.keys(dataSource[0]).slice(1);
+
+	// This will allow me to get around the Merchant Referrals graph having only 2 items.
+	let isMerchantOrStore = Object.keys(dataSource[0]);
+
+	const lineArray = [];
+	// Use the Keys to Map the data to the Line Graph and store them.
+	keysArray.forEach((item, index) => {
+		lineArray.push(
+			<Line
+				key={index}
+				name={
+					isMerchantOrStore.length < 4
+						? `merchant_${index + 1}`
+						: `store_${index + 1}`
+				}
+				type="monotone"
+				dataKey={item}
+				stroke={color[index]}
+				activeDot={{ r: 8 }}
+			/>
+		);
+	});
+	return lineArray;
+};
+
 export default function Graphs() {
 	return (
 		<div className="row gx-4 gy-4">
@@ -34,57 +67,28 @@ export default function Graphs() {
 						</button>
 					</div>
 					<hr />
-					{/* The ResponsiveContainer will ensure the graphs don't overflow the container. */}
+					{/* The ResponsiveContainer will ensure the graphs don't overflow the container.*/}
+					{/* Render the Top 5 Best Performing Graphs Dynamically. */}
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						<LineChart
 							data={bestPerformingStoresData}
 							margin={{
 								top: 5,
-								right: 30,
-								left: 20,
+								right: 20,
+								left: 0,
 								bottom: 5,
 							}}
 						>
 							<CartesianGrid strokeDasharray="3 3" />
-							<XAxis dataKey="name" />
+							<XAxis
+								dataKey={
+									Object.keys(bestPerformingStoresData[0])[0]
+								}
+							/>
 							<YAxis />
 							<Tooltip />
 							<Legend />
-							<Line
-								name="store_1"
-								type="monotone"
-								dataKey="s1"
-								stroke="#8f8bda"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_2"
-								type="monotone"
-								dataKey="s2"
-								stroke="#82ca9d"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_3"
-								type="monotone"
-								dataKey="s3"
-								stroke="#b8d9f7"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_4"
-								type="monotone"
-								dataKey="s4"
-								stroke="#f6b339"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_5"
-								type="monotone"
-								dataKey="s5"
-								stroke="#90ab9f"
-								activeDot={{ r: 8 }}
-							/>
+							{createLineCharts(bestPerformingStoresData)}
 						</LineChart>
 					</ResponsiveContainer>
 				</div>
@@ -92,6 +96,7 @@ export default function Graphs() {
 			{/* End of 5 Best Performing Stores Section */}
 
 			{/* Start of 5 Least Performing Stores Section */}
+			{/* Render the Top 5 Least Performing Graphs Dynamically. */}
 			<div className="col-lg-6">
 				<div className="card">
 					<div className="card-body d-flex justify-content-between">
@@ -111,51 +116,21 @@ export default function Graphs() {
 							data={leastPerformingStoresData}
 							margin={{
 								top: 5,
-								right: 30,
-								left: 20,
+								right: 20,
+								left: 0,
 								bottom: 5,
 							}}
 						>
 							<CartesianGrid strokeDasharray="3 3" />
-							<XAxis dataKey="name" />
+							<XAxis
+								dataKey={
+									Object.keys(leastPerformingStoresData[0])[0]
+								}
+							/>
 							<YAxis />
 							<Tooltip />
 							<Legend />
-							<Line
-								name="store_1"
-								type="monotone"
-								dataKey="s1"
-								stroke="#8f8bda"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_2"
-								type="monotone"
-								dataKey="s2"
-								stroke="#82ca9d"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_3"
-								type="monotone"
-								dataKey="s3"
-								stroke="#b8d9f7"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_4"
-								type="monotone"
-								dataKey="s4"
-								stroke="#f6b339"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_5"
-								type="monotone"
-								dataKey="s5"
-								stroke="#90ab9f"
-								activeDot={{ r: 8 }}
-							/>
+							{createLineCharts(leastPerformingStoresData)}
 						</LineChart>
 					</ResponsiveContainer>
 				</div>
@@ -163,6 +138,7 @@ export default function Graphs() {
 			{/* End of 5 Least Performing Stores Section. */}
 
 			{/* Start of Referrals Section. */}
+			{/* Render the Referrals By Merchant Graphs Dynamically. */}
 			<div className="col-lg-6">
 				<div className="card">
 					<div className="card-body">
@@ -176,30 +152,17 @@ export default function Graphs() {
 							data={referralsData}
 							margin={{
 								top: 5,
-								right: 30,
-								left: 20,
+								right: 20,
+								left: 0,
 								bottom: 5,
 							}}
 						>
 							<CartesianGrid strokeDasharray="3 3" />
-							<XAxis dataKey="name" />
+							<XAxis dataKey={Object.keys(referralsData[0])[0]} />
 							<YAxis />
 							<Tooltip />
 							<Legend />
-							<Line
-								name="merchant_1"
-								type="monotone"
-								dataKey="m1"
-								stroke="#8884d8"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="merchant_2"
-								type="monotone"
-								dataKey="m2"
-								stroke="#b1dec2"
-								activeDot={{ r: 8 }}
-							/>
+							{createLineCharts(referralsData)}
 						</LineChart>
 					</ResponsiveContainer>
 				</div>
@@ -212,13 +175,16 @@ export default function Graphs() {
 			<div className="col-lg-6">
 				<div className="card">
 					<div className="card-body">
-						{/* Card Title.
-						TODO: Override the card margins, to remove the extra padding*/}
+						{/* 
+							Card Title.
+							TODO: Override the card margins, to remove the extra padding
+						*/}
 						<h5 className="card-title">
 							TOP PRODUCTS BY MERCHANT AND DATE
 						</h5>
 					</div>
 					<hr />
+					{/* Render the Table component here */}
 					<div className="p-2">
 						<TableComponent />
 					</div>
