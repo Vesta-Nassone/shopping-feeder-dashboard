@@ -56,7 +56,7 @@ export default function Graphs() {
 			{/* Start of 5 Best Performing Stores Section */}
 			<div className="col-lg-6">
 				<div className="card">
-					<div className="card-body d-flex justify-content-between">
+					<div className="card-body d-flex justify-content-between" style={{paddingBottom: "2px"}}>
 						<h5 className="card-title">
 							TOP 5 BEST PERFORMING STORES
 						</h5>
@@ -100,7 +100,7 @@ export default function Graphs() {
 			{/* Render the Top 5 Least Performing Graphs Dynamically. */}
 			<div className="col-lg-6">
 				<div className="card">
-					<div className="card-body d-flex justify-content-between">
+					<div className="card-body d-flex justify-content-between" style={{paddingBottom: "2px"}}>
 						<h5 className="card-title">
 							TOP 5 LEAST PERFORMING STORES
 						</h5>
@@ -142,7 +142,7 @@ export default function Graphs() {
 			{/* Render the Referrals By Merchant Graphs Dynamically. */}
 			<div className="col-lg-6">
 				<div className="card">
-					<div className="card-body">
+					<div className="card-body" style={{paddingBottom: "2px"}}>
 						<h5 className="card-title">
 							REFERRALS BY MERCHANT AND DATE
 						</h5>
@@ -175,7 +175,7 @@ export default function Graphs() {
 			*/}
 			<div className="col-lg-6">
 				<div className="card">
-					<div className="card-body">
+					<div className="card-body" style={{paddingBottom: "2px"}}>
 						{/* 
 							Card Title.
 							TODO: Override the card margins, to remove the extra padding
