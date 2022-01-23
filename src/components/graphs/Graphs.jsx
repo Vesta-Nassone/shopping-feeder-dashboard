@@ -17,10 +17,13 @@ import {
 } from "../../data/dummyData";
 
 const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
+/* This method will dynamically create Line Charts so I don't have to hard code them.
+*/
 const createLineCharts = () => {
 	const keysArray = Object.keys(bestPerformingStoresData[0]).slice(1);
 	console.log(keysArray);
 	const lineArray = [];
+	// Map the data[keys] to the Line Graph and store them in an array.
 	keysArray.forEach((item, index) => {
 		lineArray.push(
 			<Line
@@ -53,56 +56,7 @@ export default function Graphs() {
 					<hr />
 					{/* The ResponsiveContainer will ensure the graphs don't overflow the container. */}
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
-						<LineChart
-							data={bestPerformingStoresData}
-							margin={{
-								top: 5,
-								right: 30,
-								left: 20,
-								bottom: 5,
-							}}
-						>
-							<CartesianGrid strokeDasharray="3 3" />
-							<XAxis dataKey="name" />
-							<YAxis />
-							<Tooltip />
-							<Legend />
-							<Line
-								name="store_1"
-								type="monotone"
-								dataKey="s1"
-								stroke="#8f8bda"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_2"
-								type="monotone"
-								dataKey="s2"
-								stroke="#82ca9d"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_3"
-								type="monotone"
-								dataKey="s3"
-								stroke="#b8d9f7"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_4"
-								type="monotone"
-								dataKey="s4"
-								stroke="#f6b339"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="store_5"
-								type="monotone"
-								dataKey="s5"
-								stroke="#90ab9f"
-								activeDot={{ r: 8 }}
-							/>
-						</LineChart>
+						
 					</ResponsiveContainer>
 				</div>
 			</div>
