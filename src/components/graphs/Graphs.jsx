@@ -18,7 +18,7 @@ import {
 
 const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
 /* This method will dynamically create Line Charts so I don't have to hard code them.
-*/
+ */
 const createLineCharts = () => {
 	const keysArray = Object.keys(bestPerformingStoresData[0]).slice(1);
 	console.log(keysArray);
@@ -56,7 +56,26 @@ export default function Graphs() {
 					<hr />
 					{/* The ResponsiveContainer will ensure the graphs don't overflow the container. */}
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
-						
+						<LineChart
+							data={bestPerformingStoresData}
+							margin={{
+								top: 5,
+								right: 20,
+								left: 0,
+								bottom: 5,
+							}}
+						>
+							<CartesianGrid strokeDasharray="3 3" />
+							<XAxis
+								dataKey={
+									Object.keys(bestPerformingStoresData[0])[0]
+								}
+							/>
+							<YAxis />
+							<Tooltip />
+							<Legend />
+							{createLineCharts()}
+						</LineChart>
 					</ResponsiveContainer>
 				</div>
 			</div>
