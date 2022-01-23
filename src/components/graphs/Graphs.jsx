@@ -34,10 +34,9 @@ export default function Graphs() {
 						</button>
 					</div>
 					<hr />
+					{/* The ResponsiveContainer will ensure the graphs don't overflow the container. */}
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						<LineChart
-							width={700}
-							height={300}
 							data={bestPerformingStoresData}
 							margin={{
 								top: 5,
@@ -109,8 +108,6 @@ export default function Graphs() {
 					<hr />
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						<LineChart
-							width={700}
-							height={300}
 							data={leastPerformingStoresData}
 							margin={{
 								top: 5,
@@ -176,8 +173,6 @@ export default function Graphs() {
 					<hr />
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						<LineChart
-							width={700}
-							height={300}
 							data={referralsData}
 							margin={{
 								top: 5,
