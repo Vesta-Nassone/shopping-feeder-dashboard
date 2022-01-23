@@ -174,3 +174,27 @@ export const leastPerformingStoresData = [
 		s5: 49,
 	},
 ];
+
+export const dates = [
+	{
+		name: "Date A-B",
+	},
+	{
+		name: "Date B-C",
+	},
+	{
+		name: "Date C-D",
+	},
+	{
+		name: "Date D-E",
+	},
+	{
+		name: "Date E-F",
+	},
+	{
+		name: "Date F-G",
+	},
+	{
+		name: "Date G-H",
+	},
+];
