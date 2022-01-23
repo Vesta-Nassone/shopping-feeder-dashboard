@@ -1,4 +1,5 @@
 import React from "react";
+import { Table } from "react-bootstrap";
 import { tableData } from "../../data/dummyData";
 
 export default function Graphs() {
@@ -43,6 +44,28 @@ export default function Graphs() {
 								))}
 							</tbody>
 						</table>
+						<Table responsive >
+							<thead className="thead-dark">
+								<tr>
+									<th scope="col">Merchant</th>
+									<th scope="col">Store</th>
+									<th scope="col">Channel</th>
+									<th scope="col">Product</th>
+								</tr>
+							</thead>
+							{/* Map the able data to the appropriate row and cols.
+							Assign an id to each item for minimuz DOM updates. */}
+							<tbody>
+								{tableData.map((item, id) => (
+									<tr key={id}>
+										<td>{item.name}</td>
+										<td>{item.store}</td>
+										<td>{item.channel}</td>
+										<td>{item.product}</td>
+									</tr>
+								))}
+							</tbody>
+						</Table>
 					</div>
 				</div>
 			</div>
