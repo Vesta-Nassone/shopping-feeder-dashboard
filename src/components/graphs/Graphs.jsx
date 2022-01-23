@@ -44,7 +44,7 @@ export default function Graphs() {
 								))}
 							</tbody>
 						</table>
-						<Table responsive >
+						<Table responsive bordered>
 							<thead className="thead-dark">
 								<tr>
 									<th scope="col">Merchant</th>
