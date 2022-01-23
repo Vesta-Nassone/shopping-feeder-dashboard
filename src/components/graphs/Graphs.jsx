@@ -1,6 +1,6 @@
 import React from "react";
 import { TableComponent } from "./TableComponent";
-import { LineChart, Line, XAxis, YAxis } from "recharts";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid } from "recharts";
 
 const bestPerformingStoresData = [
 	{
@@ -90,6 +90,7 @@ export default function Graphs() {
 							bottom: 5,
 						}}
 					>
+						<CartesianGrid strokeDasharray="3 3" />
 						<XAxis dataKey="name" />
 						<YAxis />
 						<Line
