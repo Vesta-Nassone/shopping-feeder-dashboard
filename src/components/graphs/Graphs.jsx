@@ -31,6 +31,7 @@ const createLineCharts = (dataSource) => {
 				type="monotone"
 				dataKey={item}
 				stroke={color[index]}
+				activeDot={{ r: 8 }}
 			/>
 		);
 	});
