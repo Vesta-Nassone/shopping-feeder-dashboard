@@ -99,36 +99,36 @@ export default function Graphs() {
 							name="store_1"
 							type="monotone"
 							dataKey="s1"
-							stroke="#"
-							activeDot={{ r: 5 }}
+							stroke="#8f8bda"
+							activeDot={{ r: 8 }}
 						/>
 						<Line
 							name="store_2"
 							type="monotone"
 							dataKey="s2"
 							stroke="#82ca9d"
-							activeDot={{ r: 5 }}
+							activeDot={{ r: 8 }}
 						/>
 						<Line
 							name="store_3"
 							type="monotone"
 							dataKey="s3"
 							stroke="#b8d9f7"
-							activeDot={{ r: 5 }}
+							activeDot={{ r: 8 }}
 						/>
 						<Line
 							name="store_4"
 							type="monotone"
 							dataKey="s4"
 							stroke="#f6b339"
-							activeDot={{ r: 5 }}
+							activeDot={{ r: 8 }}
 						/>
 						<Line
 							name="store_5"
 							type="monotone"
 							dataKey="s5"
 							stroke="#90ab9f"
-							activeDot={{ r: 5 }}
+							activeDot={{ r: 8 }}
 						/>
 					</LineChart>
 				</div>
