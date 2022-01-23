@@ -8,6 +8,10 @@ export default function Graphs() {
 			<div className="col-lg-6">TOP 5 BEST PERFOMRING STORES</div>
 			<div className="col-lg-6">TOP 5 LEAST PERFORMING</div>
 			<div className="col-lg-6">REFERRALS BY MERCHANT AND DATE</div>
+			{/* Start of the Table section.
+			Responds well on medium screens and up.
+			Overflows on xs and sm screens.
+			TODO: Add media queries for xs and sm screen to make the table more responsive*/}
 			<div className="col-lg-6">
 				<div className="card">
 					<div className="card-body">
@@ -17,7 +21,8 @@ export default function Graphs() {
 					</div>
 					<hr />
 					<div className="p-2">
-					<table className="table  table-bordered table-hover responsive">
+						<table className="table  table-bordered table-hover responsive">
+							{/* Table heading */}
 							<thead className="thead-dark">
 								<tr>
 									<th scope="col">Merchant</th>
@@ -26,6 +31,8 @@ export default function Graphs() {
 									<th scope="col">Product</th>
 								</tr>
 							</thead>
+							{/* Map the able data to the appropriate row and cols.
+							Assign an id to each item for minimuz DOM updates. */}
 							<tbody>
 								{tableData.map((item, id) => (
 									<tr key={id}>
@@ -40,6 +47,7 @@ export default function Graphs() {
 					</div>
 				</div>
 			</div>
+			{/* End of Table */}
 		</div>
 	);
 }
