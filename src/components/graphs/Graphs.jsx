@@ -16,6 +16,28 @@ export default function Graphs() {
 						</h5>
 					</div>
 					<hr />
+					<div className="p-2">
+						<table className="table  ">
+							<thead className="">
+								<tr>
+									<th scope="col">Merchant</th>
+									<th scope="col">Store</th>
+									<th scope="col">Channel</th>
+									<th scope="col">Product</th>
+								</tr>
+							</thead>
+							<tbody>
+								{tableData.map((item, id) => (
+									<tr key={id}>
+										<td>{item.name}</td>
+										<td>{item.store}</td>
+										<td>{item.channel}</td>
+										<td>{item.product}</td>
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
