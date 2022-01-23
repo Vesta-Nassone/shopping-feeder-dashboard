@@ -21,18 +21,20 @@ export default function Graphs() {
 				</div>
 			</div>
 			<div className="col-lg-6">
-				<div className="card-body ">
-					<h5 className="card-title">
-						TOP 5 LEAST PERFORMING STORES
-					</h5>
-					<button
-						type="button"
-						className="btn btn-sm btn-outline-secondary disabled"
-					>
-						Return on Ad Spent
-					</button>
+				<div className="card">
+					<div className="card-body d-flex justify-content-between">
+						<h5 className="card-title">
+							TOP 5 LEAST PERFORMING STORES
+						</h5>
+						<button
+							type="button"
+							className="btn btn-sm btn-outline-secondary disabled"
+						>
+							Return on Ad Spent
+						</button>
+					</div>
+					<hr />
 				</div>
-				<hr />
 			</div>
 			<div className="col-lg-6">REFERRALS BY MERCHANT AND DATE</div>
 			{/* Start of the Table section.
