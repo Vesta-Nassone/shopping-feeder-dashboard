@@ -4,6 +4,7 @@ import { TableComponent } from "./TableComponent";
 export default function Graphs() {
 	return (
 		<div className="row gx-4 gy-6">
+			{/* Start of 5 Best Performing Stores Section */}
 			<div className="col-lg-6">
 				<div className="card">
 					<div className="card-body d-flex justify-content-between">
@@ -20,6 +21,9 @@ export default function Graphs() {
 					<hr />
 				</div>
 			</div>
+			{/* End of 5 Best Performing Stores Section */}
+
+			{/* Start of 5 Least Performing Stores Section */}
 			<div className="col-lg-6">
 				<div className="card">
 					<div className="card-body d-flex justify-content-between">
@@ -36,7 +40,21 @@ export default function Graphs() {
 					<hr />
 				</div>
 			</div>
-			<div className="col-lg-6">REFERRALS BY MERCHANT AND DATE</div>
+			{/* End of 5 Least Performing Stores Section. */}
+
+			{/* Start of Referrals Section. */}
+			<div className="col-lg-6">
+				<div className="card">
+					<div className="card-body">
+						<h5 className="card-title">
+							REFERRALS BY MERCHANT AND DATE
+						</h5>
+					</div>
+					<hr />
+				</div>
+			</div>
+			{/* End of Referrals Section */}
+
 			{/* Start of the Table section.
 				Made the Table a seperate component.
 			*/}
