@@ -19,8 +19,8 @@ import {
 const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
 /* This method will dynamically create Line Charts so I don't have to hard code them.
  */
-const createLineCharts = () => {
-	const keysArray = Object.keys(bestPerformingStoresData[0]).slice(1);
+const createLineCharts = (dataSource) => {
+	const keysArray = Object.keys(dataSource[0]).slice(1);
 	console.log(keysArray);
 	const lineArray = [];
 	// Map the data[keys] to the Line Graph and store them in an array.
@@ -74,7 +74,7 @@ export default function Graphs() {
 							<YAxis />
 							<Tooltip />
 							<Legend />
-							{createLineCharts()}
+							{createLineCharts(bestPerformingStoresData)}
 						</LineChart>
 					</ResponsiveContainer>
 				</div>
