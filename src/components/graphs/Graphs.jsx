@@ -17,6 +17,7 @@ import {
 } from "../../data/dummyData";
 
 const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
+const stores = ["store_1", "store_2", "store_3", "store_4", "store_5"];
 
 export default function Graphs() {
 	return (
