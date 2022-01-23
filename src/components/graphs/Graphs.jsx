@@ -3,7 +3,7 @@ import { TableComponent } from "./TableComponent";
 
 export default function Graphs() {
 	return (
-		<div className="row gx-4 gy-6">
+		<div className="row gx-4 gy-4">
 			{/* Start of 5 Best Performing Stores Section */}
 			<div className="col-lg-6">
 				<div className="card">
