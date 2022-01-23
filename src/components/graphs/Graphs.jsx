@@ -1,6 +1,6 @@
 import React from "react";
 import { TableComponent } from "./TableComponent";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from "recharts";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
 
 const bestPerformingStoresData = [
 	{
@@ -94,7 +94,7 @@ export default function Graphs() {
 						<XAxis dataKey="name" />
 						<YAxis />
 						<Tooltip />
-		
+						<Legend />
 						<Line
 							name="store_1"
 							type="monotone"
