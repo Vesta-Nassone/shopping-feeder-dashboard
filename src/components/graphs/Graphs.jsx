@@ -16,19 +16,20 @@ import {
 	referralsData,
 } from "../../data/dummyData";
 
-
 const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
 /* 
 	This method will dynamically create Line Charts so I don't have to hard code them.
  */
 const createLineCharts = (dataSource) => {
+	// get the keys from the data source
 	const keysArray = Object.keys(dataSource[0]).slice(1);
-	console.log(keysArray);
+	// console.log(keysArray);
 	const lineArray = [];
-	// Map the data[keys] to the Line Graph and store them in an array.
+	// use the Keys to Map the data to the Line Graph and store them.
 	keysArray.forEach((item, index) => {
 		lineArray.push(
 			<Line
+				key={index}
 				name={`store_${index + 1}`}
 				type="monotone"
 				dataKey={item}
@@ -39,7 +40,6 @@ const createLineCharts = (dataSource) => {
 	});
 	return lineArray;
 };
-
 
 export default function Graphs() {
 	return (
@@ -59,7 +59,12 @@ export default function Graphs() {
 						</button>
 					</div>
 					<hr />
-					{/* The ResponsiveContainer will ensure the graphs don't overflow the container. */}
+					{/* The ResponsiveContainer will ensure the graphs don't overflow the container.
+						Dynamically rendering the charts reduces the amount of code.
+						
+						TODO: The Merchant data does not fit the criteria for creatingLineCarts,
+						Need to adjust the model to accompany for all data sources.
+					 */}
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						<LineChart
 							data={bestPerformingStoresData}
@@ -102,7 +107,26 @@ export default function Graphs() {
 					</div>
 					<hr />
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
-						
+						<LineChart
+							data={leastPerformingStoresData}
+							margin={{
+								top: 5,
+								right: 20,
+								left: 0,
+								bottom: 5,
+							}}
+						>
+							<CartesianGrid strokeDasharray="3 3" />
+							<XAxis
+								dataKey={
+									Object.keys(leastPerformingStoresData[0])[0]
+								}
+							/>
+							<YAxis />
+							<Tooltip />
+							<Legend />
+							{createLineCharts(leastPerformingStoresData)}
+						</LineChart>
 					</ResponsiveContainer>
 				</div>
 			</div>
