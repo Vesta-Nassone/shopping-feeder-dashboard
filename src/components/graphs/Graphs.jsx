@@ -16,6 +16,7 @@ import {
 	referralsData,
 } from "../../data/dummyData";
 
+// Holds the colors of the graphs to be dynamically allocated.
 const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
 /* 
 	This method will dynamically create Line Charts so I don't have to hard code them.
@@ -66,9 +67,8 @@ export default function Graphs() {
 						</button>
 					</div>
 					<hr />
-					{/* The ResponsiveContainer will ensure the graphs don't overflow the container.
-						Dynamically rendering the charts reduces the amount of code.
-					 */}
+					{/* The ResponsiveContainer will ensure the graphs don't overflow the container.*/}
+					{/* Render the Top 5 Best Performing Graphs Dynamically. */}
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						<LineChart
 							data={bestPerformingStoresData}
@@ -96,6 +96,7 @@ export default function Graphs() {
 			{/* End of 5 Best Performing Stores Section */}
 
 			{/* Start of 5 Least Performing Stores Section */}
+			{/* Render the Top 5 Least Performing Graphs Dynamically. */}
 			<div className="col-lg-6">
 				<div className="card">
 					<div className="card-body d-flex justify-content-between">
@@ -137,6 +138,7 @@ export default function Graphs() {
 			{/* End of 5 Least Performing Stores Section. */}
 
 			{/* Start of Referrals Section. */}
+			{/* Render the Referrals By Merchant Graphs Dynamically. */}
 			<div className="col-lg-6">
 				<div className="card">
 					<div className="card-body">
@@ -173,13 +175,16 @@ export default function Graphs() {
 			<div className="col-lg-6">
 				<div className="card">
 					<div className="card-body">
-						{/* Card Title.
-						TODO: Override the card margins, to remove the extra padding*/}
+						{/* 
+							Card Title.
+							TODO: Override the card margins, to remove the extra padding
+						*/}
 						<h5 className="card-title">
 							TOP PRODUCTS BY MERCHANT AND DATE
 						</h5>
 					</div>
 					<hr />
+					{/* Render the Table component here */}
 					<div className="p-2">
 						<TableComponent />
 					</div>
