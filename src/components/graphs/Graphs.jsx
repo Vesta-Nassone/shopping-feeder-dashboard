@@ -1,5 +1,11 @@
 import React from "react";
 import { TableComponent } from "./TableComponent";
+import {
+	LineChart,
+	Line,
+	XAxis,
+	YAxis,
+} from "recharts";
 
 export default function Graphs() {
 	return (
