@@ -1,4 +1,5 @@
 import React from "react";
+import { tableData } from "../../data/dummyData";
 
 export default function Graphs() {
 	return (
