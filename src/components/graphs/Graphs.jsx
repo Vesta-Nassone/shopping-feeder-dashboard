@@ -1,3 +1,4 @@
+import { tab } from "@testing-library/user-event/dist/tab";
 import React from "react";
 import { tableData } from "../../data/dummyData";
 
@@ -14,6 +15,7 @@ export default function Graphs() {
 							TOP PRODUCTS BY MERCHANT AND DATE
 						</h5>
 					</div>
+					<hr />
 				</div>
 			</div>
 		</div>
