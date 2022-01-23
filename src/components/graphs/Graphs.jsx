@@ -129,6 +129,44 @@ const leastPerformingStoresData = [
 	},
 ];
 
+const referralsData = [
+	{
+		name: "Date A-B",
+		m1: 40,
+		m2: 25,
+	},
+	{
+		name: "Date B-C",
+		m1: 30,
+		m2: 15,
+	},
+	{
+		name: "Date C-D",
+		m1: 22,
+		m2: 99,
+	},
+	{
+		name: "Date D-E",
+		m1: 25,
+		m2: 38,
+	},
+	{
+		name: "Date E-F",
+		m1: 22,
+		m2: 35,
+	},
+	{
+		name: "Date F-G",
+		m1: 24,
+		m2: 62,
+	},
+	{
+		name: "Date G-H",
+		m1: 35,
+		m2: 40,
+	},
+];
+
 export default function Graphs() {
 	return (
 		<div className="row gx-4 gy-4">
