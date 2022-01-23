@@ -27,6 +27,7 @@ const createLineCharts = (dataSource) => {
 
 	// This will allow me to get around the Merchant Referrals graph having only 2 items.
 	let isMerchantOrStore = Object.keys(dataSource[0]);
+	// console.log(typeof(isMerchantOrStore[1]))
 
 	const lineArray = [];
 	// Use the Keys to Map the data to the Line Graph and store them.
@@ -35,7 +36,7 @@ const createLineCharts = (dataSource) => {
 			<Line
 				key={index}
 				name={
-					isMerchantOrStore.length < 4
+					isMerchantOrStore[1] === "m1"
 						? `merchant_${index + 1}`
 						: `store_${index + 1}`
 				}
