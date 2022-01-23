@@ -6,7 +6,7 @@ export default function TopCardRows() {
 	/* This function will handle the clicking of Add new Merchant. */
 	const handleOnClick = () => {
 		alert('You clicked on Add a New Merchant')
-		console.log('Added a new Merchant')
+		// console.log('Added a new Merchant')
 	}
 	/* This component will be a Bootstrap grid, that will hold the Top 2 rows of cards. 
     Grid is responsive, 1column for xs screens, 2columns for sm to mid and 5cols for lg and above.
