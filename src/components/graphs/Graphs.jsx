@@ -17,7 +17,7 @@ export default function Graphs() {
 					</div>
 					<hr />
 					<div className="p-2">
-					<table className="table  table-bordered  ">
+					<table className="table  table-bordered table-hover">
 							<thead className="thead-dark">
 								<tr>
 									<th scope="col">Merchant</th>
