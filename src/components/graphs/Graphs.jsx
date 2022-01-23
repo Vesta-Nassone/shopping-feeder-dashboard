@@ -99,7 +99,7 @@ export default function Graphs() {
 							name="store_1"
 							type="monotone"
 							dataKey="s1"
-							stroke="#8f8bda"
+							stroke="#"
 							activeDot={{ r: 5 }}
 						/>
 						<Line
