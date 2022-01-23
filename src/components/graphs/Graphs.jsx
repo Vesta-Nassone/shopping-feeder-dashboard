@@ -18,7 +18,7 @@ export default function Graphs() {
 					<hr />
 					<div className="p-2">
 						<table className="table  ">
-							<thead className="">
+							<thead className="thead-dark">
 								<tr>
 									<th scope="col">Merchant</th>
 									<th scope="col">Store</th>
