@@ -16,6 +16,8 @@ import {
 	referralsData,
 } from "../../data/dummyData";
 
+const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
+
 export default function Graphs() {
 	return (
 		<div className="row gx-4 gy-4">
