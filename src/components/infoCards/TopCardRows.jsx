@@ -3,6 +3,10 @@ import { Card } from "./Card";
 import "./TopCardRows.css";
 
 export default function TopCardRows() {
+	/* This function will handle the clicking of Add new Merchant. */
+	const handleOnClick = () =>{
+		console.log('Added a new Merchant')
+	}
 	/* This component will be a Bootstrap grid, that will hold the Top 2 rows of cards. 
     Grid is responsive, 1column for xs screens, 2columns for sm to mid and 5cols for lg and above.
     */
@@ -68,7 +72,7 @@ export default function TopCardRows() {
 
 			{/* Start of Second row */}
 			<div className="col px-2">
-				<Card cardTitle="Add New Merchant">
+				<Card cardTitle="Add New Merchant" onClick={handleOnClick}>
 					<span className="info-box-icon">
 						<i className="bi bi-plus" />
 					</span>
