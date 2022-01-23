@@ -1,6 +1,15 @@
 import React from "react";
 import { TableComponent } from "./TableComponent";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import {
+	LineChart,
+	Line,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	Legend,
+	ResponsiveContainer,
+} from "recharts";
 
 const bestPerformingStoresData = [
 	{
@@ -79,58 +88,60 @@ export default function Graphs() {
 						</button>
 					</div>
 					<hr />
-					<LineChart
-						width={700}
-						height={300}
-						data={bestPerformingStoresData}
-						margin={{
-							top: 5,
-							right: 30,
-							left: 20,
-							bottom: 5,
-						}}
-					>
-						<CartesianGrid strokeDasharray="3 3" />
-						<XAxis dataKey="name" />
-						<YAxis />
-						<Tooltip />
-						<Legend />
-						<Line
-							name="store_1"
-							type="monotone"
-							dataKey="s1"
-							stroke="#8f8bda"
-							activeDot={{ r: 8 }}
-						/>
-						<Line
-							name="store_2"
-							type="monotone"
-							dataKey="s2"
-							stroke="#82ca9d"
-							activeDot={{ r: 8 }}
-						/>
-						<Line
-							name="store_3"
-							type="monotone"
-							dataKey="s3"
-							stroke="#b8d9f7"
-							activeDot={{ r: 8 }}
-						/>
-						<Line
-							name="store_4"
-							type="monotone"
-							dataKey="s4"
-							stroke="#f6b339"
-							activeDot={{ r: 8 }}
-						/>
-						<Line
-							name="store_5"
-							type="monotone"
-							dataKey="s5"
-							stroke="#90ab9f"
-							activeDot={{ r: 8 }}
-						/>
-					</LineChart>
+					<ResponsiveContainer width="100%" aspect={4 / 1}>
+						<LineChart
+							width={700}
+							height={300}
+							data={bestPerformingStoresData}
+							margin={{
+								top: 5,
+								right: 30,
+								left: 20,
+								bottom: 5,
+							}}
+						>
+							<CartesianGrid strokeDasharray="3 3" />
+							<XAxis dataKey="name" />
+							<YAxis />
+							<Tooltip />
+							<Legend />
+							<Line
+								name="store_1"
+								type="monotone"
+								dataKey="s1"
+								stroke="#8f8bda"
+								activeDot={{ r: 8 }}
+							/>
+							<Line
+								name="store_2"
+								type="monotone"
+								dataKey="s2"
+								stroke="#82ca9d"
+								activeDot={{ r: 8 }}
+							/>
+							<Line
+								name="store_3"
+								type="monotone"
+								dataKey="s3"
+								stroke="#b8d9f7"
+								activeDot={{ r: 8 }}
+							/>
+							<Line
+								name="store_4"
+								type="monotone"
+								dataKey="s4"
+								stroke="#f6b339"
+								activeDot={{ r: 8 }}
+							/>
+							<Line
+								name="store_5"
+								type="monotone"
+								dataKey="s5"
+								stroke="#90ab9f"
+								activeDot={{ r: 8 }}
+							/>
+						</LineChart>
+					</ResponsiveContainer>
 				</div>
 			</div>
 			{/* End of 5 Best Performing Stores Section */}
