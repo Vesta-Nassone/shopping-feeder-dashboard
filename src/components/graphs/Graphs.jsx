@@ -18,7 +18,22 @@ import {
 
 const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
 const stores = ["store_1", "store_2", "store_3", "store_4", "store_5"];
-
+const createLineCharts = () => {
+	const keysArray = Object.keys(bestPerformingStoresData[0]).slice(1);
+	console.log(keysArray);
+	const lineArray = [];
+	keysArray.forEach((item, index) => {
+		lineArray.push(
+			<Line
+				name={stores[index]}
+				type="monotone"
+				dataKey={item}
+				stroke={color[index]}
+			/>
+		);
+	});
+	return lineArray;
+};
 export default function Graphs() {
 	return (
 		<div className="row gx-4 gy-4">
