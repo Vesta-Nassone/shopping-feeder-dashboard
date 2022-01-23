@@ -20,7 +20,15 @@ export default function Graphs() {
 					<hr />
 				</div>
 			</div>
-			<div className="col-lg-6">TOP 5 LEAST PERFORMING</div>
+			<div className="col-lg-6">
+				<div className="card-body d-flex justify-content-between">
+					<h5 className="card-title">
+						TOP 5 LEAST PERFORMING STORES
+					</h5>
+					
+				</div>
+				<hr />
+			</div>
 			<div className="col-lg-6">REFERRALS BY MERCHANT AND DATE</div>
 			{/* Start of the Table section.
 				Made the Table a seperate component.
