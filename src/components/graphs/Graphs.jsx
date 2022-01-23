@@ -23,14 +23,21 @@ const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
 const createLineCharts = (dataSource) => {
 	// get the keys from the data source
 	const keysArray = Object.keys(dataSource[0]).slice(1);
-	// console.log(keysArray);
+
+	// This will allow me to get around the Merchant Referrals graph having only 2 items.
+	let isMerchantOrStore = Object.keys(dataSource[0]);
+
 	const lineArray = [];
-	// use the Keys to Map the data to the Line Graph and store them.
+	// Use the Keys to Map the data to the Line Graph and store them.
 	keysArray.forEach((item, index) => {
 		lineArray.push(
 			<Line
 				key={index}
-				name={`store_${index + 1}`}
+				name={
+					isMerchantOrStore.length < 4
+						? `merchant_${index + 1}`
+						: `store_${index + 1}`
+				}
 				type="monotone"
 				dataKey={item}
 				stroke={color[index]}
@@ -61,9 +68,6 @@ export default function Graphs() {
 					<hr />
 					{/* The ResponsiveContainer will ensure the graphs don't overflow the container.
 						Dynamically rendering the charts reduces the amount of code.
-						
-						TODO: The Merchant data does not fit the criteria for creatingLineCarts,
-						Need to adjust the model to accompany for all data sources.
 					 */}
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						<LineChart
@@ -146,30 +150,17 @@ export default function Graphs() {
 							data={referralsData}
 							margin={{
 								top: 5,
-								right: 30,
-								left: 20,
+								right: 20,
+								left: 0,
 								bottom: 5,
 							}}
 						>
 							<CartesianGrid strokeDasharray="3 3" />
-							<XAxis dataKey="name" />
+							<XAxis dataKey={Object.keys(referralsData[0])[0]} />
 							<YAxis />
 							<Tooltip />
 							<Legend />
-							<Line
-								name="merchant_1"
-								type="monotone"
-								dataKey="m1"
-								stroke="#8884d8"
-								activeDot={{ r: 8 }}
-							/>
-							<Line
-								name="merchant_2"
-								type="monotone"
-								dataKey="m2"
-								stroke="#b1dec2"
-								activeDot={{ r: 8 }}
-							/>
+							{createLineCharts(referralsData)}
 						</LineChart>
 					</ResponsiveContainer>
 				</div>
