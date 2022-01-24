@@ -141,7 +141,8 @@ const createRandomCharts = (dataSource) => {
 export default function Graphs() {
 	/* use the check toggle to control the data that will be displayed */
 	const [check] = useContext(CardContext);
-	// console.log(typeof(randomize));
+	// console.log(typeof (check));
+	// console.log(check)
 	return (
 		<div className="row gx-4 gy-4">
 			{/* Start of 5 Best Performing Stores Section */}
@@ -216,7 +217,7 @@ export default function Graphs() {
 					<hr />
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						<LineChart
-							data={leastPerformingStoresData}
+							data={check ? randomizedLeast : leastPerformingStoresData}
 							margin={{
 								top: 5,
 								right: 20,
@@ -233,7 +234,9 @@ export default function Graphs() {
 							<YAxis />
 							<Tooltip />
 							<Legend />
-							{createLineCharts(leastPerformingStoresData)}
+							{check
+								? createRandomCharts(randomizedLeast)
+								: createLineCharts(leastPerformingStoresData)}
 						</LineChart>
 					</ResponsiveContainer>
 				</div>
@@ -252,7 +255,7 @@ export default function Graphs() {
 					<hr />
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						<LineChart
-							data={referralsData}
+							data={check ? randomizedRef : referralsData}
 							margin={{
 								top: 5,
 								right: 20,
@@ -265,7 +268,9 @@ export default function Graphs() {
 							<YAxis />
 							<Tooltip />
 							<Legend />
-							{createLineCharts(referralsData)}
+							{check
+								? createRandomCharts(randomizedRef)
+								: createLineCharts(referralsData)}
 						</LineChart>
 					</ResponsiveContainer>
 				</div>
