@@ -11,7 +11,47 @@ export default function TopCardRows() {
 	// function incrementMerchants() {
 	// 	setMerch((prevMerch) => prevMerch + 1);
 	// }
-	
+	function increment() {
+		setStores((prevStore) => prevStore + 1);
+		setMerchants((prevMerchants) => prevMerchants + 1);
+	}
+	const randomize = () => {
+		let randomizedBest = [];
+		let randomizedLeast = [];
+		let randomizedRef = [];
+		for (let i = 0; i < 7; i++) {
+			let best = {
+				value: {
+					s1: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+					s2: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+					s3: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+					s4: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+					s5: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+				},
+			};
+			let least = {
+				value: {
+					s1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+					s2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+					s3: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+					s4: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+					s5: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+				},
+			};
+			let ref = {
+				value: {
+					m1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+					m2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+				},
+			};
+			randomizedBest.push(best);
+			randomizedLeast.push(least);
+			randomizedRef.push(ref);
+		}
+
+		console.log(randomizedBest[0].value);
+		console.log(randomizedBest);
+	};
 	/* This function will handle the clicking of Add new Merchant. */
 	const handleOnClick = () => {
 		increment();
