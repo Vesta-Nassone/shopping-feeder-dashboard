@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { Card } from "./Card";
 import "./TopCardRows.css";
 
+
 export default function TopCardRows() {
+	
+	// const [merchants, setMerch] = useState(2);
+	// const [stores, setStore] = useState(5);
+
+	// function incrementMerchants() {
+	// 	setMerch((prevMerch) => prevMerch + 1);
+	// }
+	
 	/* This function will handle the clicking of Add new Merchant. */
 	const handleOnClick = () => {
-		alert('You clicked on Add a New Merchant')
-		// console.log('Added a new Merchant')
-	}
+		increment();
+		// randomize();
+	};
+
 	/* This component will be a Bootstrap grid, that will hold the Top 2 rows of cards. 
     Grid is responsive, 1column for xs screens, 2columns for sm to mid and 5cols for lg and above.
     */
@@ -20,7 +30,7 @@ export default function TopCardRows() {
 						<i className="bi bi-people" />
 					</span>
 					<div className="info-box-text">
-						<h6>20</h6>
+						<h6>{merchants}</h6>
 						<p>Merchants</p>
 					</div>
 				</Card>
@@ -31,7 +41,7 @@ export default function TopCardRows() {
 						<i className="bi bi-shop" />
 					</span>
 					<div className="info-box-text">
-						<h6>40</h6>
+						<h6>{stores}</h6>
 						<p>Stores</p>
 					</div>
 				</Card>
