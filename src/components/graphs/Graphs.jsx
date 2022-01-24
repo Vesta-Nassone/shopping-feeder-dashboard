@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TableComponent } from "./TableComponent";
 import {
 	LineChart,
@@ -15,15 +15,21 @@ import {
 	leastPerformingStoresData,
 	referralsData,
 } from "../../data/dummyData";
+import { CardContext } from "../context/CardContext";
+
 
 // Holds the colors of the graphs to be dynamically allocated.
 const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
+
+
+
 /* 
 	This method will dynamically create Line Charts so I don't have to hard code them.
  */
 const createLineCharts = (dataSource) => {
 	// get the keys from the data source
 	const keysArray = Object.keys(dataSource[0]).slice(1);
+	// console.log(keysArray)
 
 	// This will allow me to get around the Merchant Referrals graph having only 2 items.
 	let isMerchantOrStore = Object.keys(dataSource[0]);
@@ -47,10 +53,59 @@ const createLineCharts = (dataSource) => {
 			/>
 		);
 	});
+	// console.log(lineArray)
 	return lineArray;
 };
 
+const createRandomCharts = (dataSource) => {
+	// get the keys from the data source
+	const keysArray = Object.keys(dataSource[0]).slice(1);
+	// get the value from the data source
+	const valueArray = Object.values(dataSource[0]).slice(1);
+	// console.log(keysArray)
+	// console.log(valueArray)
+	// This will allow me to get around the Merchant Referrals graph having only 2 items.
+	let isMerchantOrStore = Object.keys(dataSource[0]);
+	// console.log(typeof(isMerchantOrStore[1]))
+
+	// Randomize the valuesArray and store them in randomArray.
+	const randomArray = valueArray.map(
+		(item) => item * 0 + Math.floor(Math.random() * (150 - 0 + 1) + 0)
+	);
+	// console.log(randomArray)
+	const result = [];
+	for (let index = 0; index < keysArray.length; ++index) {
+		result[keysArray[index]] = randomArray[index];
+	}
+	// console.log(Object.keys(result))
+	const randomizedKeys = Object.keys(result);
+
+	const lineArray = [];
+	// Use the Keys to Map the data to the Line Graph and store them.
+	randomizedKeys.forEach((item, index) => {
+		// console.log(`item is ${item} \n index is ${index}`)
+		lineArray.push(
+			<Line
+				key={index}
+				name={
+					isMerchantOrStore[1] === "m1"
+						? `merchant_${index + 1}`
+						: `store_${index + 1}`
+				}
+				type="monotone"
+				dataKey={item}
+				stroke={color[index]}
+				activeDot={{ r: 8 }}
+			/>
+		);
+	});
+	// console.log(lineArray)
+	return lineArray;
+};
+// createRandomCharts(referralsData)
 export default function Graphs() {
+	const [check] = useContext(CardContext);
+	// console.log(typeof(randomize));
 	return (
 		<div className="row gx-4 gy-4">
 			{/* Start of 5 Best Performing Stores Section */}
@@ -76,7 +131,7 @@ export default function Graphs() {
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						{/* height={200}*/}
 						<LineChart
-							data={bestPerformingStoresData}
+							data={check ? randomizedBest : bestPerformingStoresData}
 							margin={{
 								top: 5,
 								right: 20,
@@ -94,7 +149,10 @@ export default function Graphs() {
 							<Tooltip />
 							<Legend />
 							{/* wrapperStyle={{ position: 'relative' }} */}
-							{createLineCharts(bestPerformingStoresData)}
+							{/* createRandomCharts(randomizedBest) */}
+							{check
+								? createRandomCharts(randomizedBest)
+								: createLineCharts(bestPerformingStoresData)}
 						</LineChart>
 					</ResponsiveContainer>
 				</div>
