@@ -56,29 +56,35 @@ const createLineCharts = (dataSource) => {
 	return lineArray;
 };
 
-/* Generate the random data to be displayed on toggle. */
+/* Generate the random data to be displayed on toggle.
+The generated values are random, to gain insight on the graphs some indepth analysis would be required.
+*/
 let randomizedBest = [];
 let randomizedLeast = [];
 let randomizedRef = [];
 for (let i = 0; i < 7; i++) {
+	// generate a random number between 150 and 0 for best performing stores
+	// Add it to the best object
+	//  the d value is  to get around the off by one error, caused by the createrando
 	let best = {
-		d: 7,
 		s1: Math.floor(Math.random() * (150 - 0 + 1) + 0),
 		s2: Math.floor(Math.random() * (150 - 0 + 1) + 0),
 		s3: Math.floor(Math.random() * (150 - 0 + 1) + 0),
 		s4: Math.floor(Math.random() * (150 - 0 + 1) + 0),
 		s5: Math.floor(Math.random() * (150 - 0 + 1) + 0),
 	};
+	//  generate a number between 100 and 0 for least performing stores
+	// Add it to the least object
 	let least = {
-		d: 7,
 		s1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 		s2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 		s3: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 		s4: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 		s5: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 	};
+	//  generate a number between 100 and 0 for referrals by merchant
+	// Add it to the ref object
 	let ref = {
-		d: 2,
 		m1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 		m2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 	};
@@ -87,15 +93,15 @@ for (let i = 0; i < 7; i++) {
 	randomizedRef.push(ref);
 }
 
-console.log(bestPerformingStoresData);
-console.log(randomizedBest.keys());
+// console.log(bestPerformingStoresData);
+// console.log(randomizedBest.keys());
 /* End of random data Generator */
 
 const createRandomCharts = (dataSource) => {
 	// get the keys from the data source
-	const keysArray = Object.keys(dataSource[0]).slice(1);
+	const keysArray = Object.keys(dataSource[0]).slice(0);
 	// get the value from the data source
-	const valueArray = Object.values(dataSource[0]).slice(1);
+	const valueArray = Object.values(dataSource[0]).slice(0);
 	// console.log(keysArray)
 	// console.log(valueArray)
 	// This will allow me to get around the Merchant Referrals graph having only 2 items.
