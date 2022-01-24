@@ -1,7 +1,7 @@
 import React from "react";
 import TopCardRows from "../components/infoCards/TopCardRows";
 import Graphs from "../components/graphs/Graphs";
-import { CardProvider } from "../components/CardContext";
+import { CardProvider } from "../components/context/CardContext";
 
 export default function Dashboard() {
 	/* 
