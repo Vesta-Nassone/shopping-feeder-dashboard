@@ -174,7 +174,9 @@ export default function Graphs() {
 					</div>
 					<hr />
 					{/* The ResponsiveContainer will ensure the graphs don't overflow the container.*/}
-					{/* Render the Top 5 Best Performing Graphs Dynamically. */}
+					{/* Render the Top 5 Best Performing Graphs Dynamically. 
+					The Graph on the images provided fits perfectly onto the axis, 
+					this can be solved by adding a wrapper on the Legend with position relative, but the graph will wiggle at certain break points*/}
 					<ResponsiveContainer width="100%" aspect={4 / 1}>
 						{/* height={200}*/}
 						<LineChart

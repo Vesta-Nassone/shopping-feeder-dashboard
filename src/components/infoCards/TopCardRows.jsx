@@ -27,6 +27,7 @@ export default function TopCardRows() {
 
 	/* This component will be a Bootstrap grid, that will hold the Top 2 rows of cards. 
     Grid is responsive, 1column for xs screens, 2columns for sm to mid and 5cols for lg and above.
+	Some of the data values are hard coded but thats alright for the scope of this project.
     */
 	return (
 		<div className="row mx-n5 row-cols-1 row-cols-sm-2 row-cols-lg-5 pb-4 gy-4">
