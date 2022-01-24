@@ -1,55 +1,26 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Card } from "./Card";
 import "./TopCardRows.css";
 import { CardContext } from "../context/CardContext";
 
 export default function TopCardRows() {
-	const [merchants, setMerchants, stores, setStores] = useContext(CardContext)
+	const [
+		merchants,
+		setMerchants,
+		stores,
+		setStores,
+	] = useContext(CardContext);
+
+	const [check, setCheck] = useContext(CardContext);
 	function increment() {
 		setStores((prevStore) => prevStore + 1);
 		setMerchants((prevMerchants) => prevMerchants + 1);
 	}
-	const randomize = () => {
-		let randomizedBest = [];
-		let randomizedLeast = [];
-		let randomizedRef = [];
-		for (let i = 0; i < 7; i++) {
-			let best = {
-				value: {
-					s1: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-					s2: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-					s3: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-					s4: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-					s5: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-				},
-			};
-			let least = {
-				value: {
-					s1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-					s2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-					s3: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-					s4: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-					s5: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-				},
-			};
-			let ref = {
-				value: {
-					m1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-					m2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-				},
-			};
-			randomizedBest.push(best);
-			randomizedLeast.push(least);
-			randomizedRef.push(ref);
-		}
+	// console.log(check)
 
-		console.log(randomizedBest[0].value);
-		console.log(randomizedBest);
-	};
 	/* This function will handle the clicking of Add new Merchant. */
 	const handleOnClick = () => {
 		increment();
-		// randomize();
 	};
 
 	/* This component will be a Bootstrap grid, that will hold the Top 2 rows of cards. 
@@ -117,7 +88,7 @@ export default function TopCardRows() {
 
 			{/* Start of Second row */}
 			<div className="col px-2">
-				<Card cardTitle="Add New Merchant" onClick={handleOnClick}>
+				<Card cardTitle="Add New Merchant"  onClick={handleOnClick}>
 					<span className="info-box-icon">
 						<i className="bi bi-plus" />
 					</span>
