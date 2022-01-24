@@ -59,6 +59,7 @@ const createLineCharts = (dataSource) => {
 /* Generate the random data to be displayed on toggle.
 The generated values are random, to gain insight on the graphs some indepth analysis would be required.
 */
+let dates = ['Date A-B', 'Date B-C', 'Date C-D', 'Date D-E', 'Date E-F', 'Date F-G', 'Date G-H']
 let randomizedBest = [];
 let randomizedLeast = [];
 let randomizedRef = [];
@@ -67,6 +68,7 @@ for (let i = 0; i < 7; i++) {
 	// Add it to the best object
 	//  the d value is  to get around the off by one error, caused by the createrando
 	let best = {
+		date: dates[i],
 		s1: Math.floor(Math.random() * (150 - 0 + 1) + 0),
 		s2: Math.floor(Math.random() * (150 - 0 + 1) + 0),
 		s3: Math.floor(Math.random() * (150 - 0 + 1) + 0),
@@ -76,6 +78,7 @@ for (let i = 0; i < 7; i++) {
 	//  generate a number between 100 and 0 for least performing stores
 	// Add it to the least object
 	let least = {
+		date: dates[i],
 		s1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 		s2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 		s3: Math.floor(Math.random() * (100 - 0 + 1) + 0),
@@ -85,6 +88,7 @@ for (let i = 0; i < 7; i++) {
 	//  generate a number between 100 and 0 for referrals by merchant
 	// Add it to the ref object
 	let ref = {
+		date: dates[i],
 		m1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 		m2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
 	};
@@ -93,8 +97,8 @@ for (let i = 0; i < 7; i++) {
 	randomizedRef.push(ref);
 }
 
-// console.log(bestPerformingStoresData);
-// console.log(randomizedBest.keys());
+console.log(bestPerformingStoresData);
+console.log(randomizedBest);
 /* End of random data Generator */
 
 const createRandomCharts = (dataSource) => {
