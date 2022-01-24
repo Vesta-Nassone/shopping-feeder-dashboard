@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Card } from "./Card";
 import "./TopCardRows.css";
-
+import { CardContext } from "../CardContext";
 
 export default function TopCardRows() {
-	
+	const [merchants, setMerchants, stores, setStores] = useContext(CardContext)
 	// const [merchants, setMerch] = useState(2);
 	// const [stores, setStore] = useState(5);
 
