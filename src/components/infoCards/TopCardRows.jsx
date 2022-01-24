@@ -7,7 +7,7 @@ export default function TopCardRows() {
 	// Keep the state of merchants and stores here
 	const [merchants, setMerchants] = useState(2);
 	const [stores, setStores] = useState(5);
-	
+
 	// get the state from Context.
 	// This will allow the check variable to be passed to Graph for randomizing the data.
 	const [check, setCheck] = useContext(CardContext);
@@ -92,7 +92,7 @@ export default function TopCardRows() {
 			<div className="col px-2">
 				<Card cardTitle="Add New Merchant" onClick={(() => {
 					setCheck(!check);
-					check ? increment() : resetCount();
+					check ? resetCount() : increment();
 				})}>
 					<span className="info-box-icon">
 						<i className="bi bi-plus" />
