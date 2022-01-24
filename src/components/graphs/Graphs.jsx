@@ -103,9 +103,9 @@ console.log(randomizedBest);
 
 const createRandomCharts = (dataSource) => {
 	// get the keys from the data source
-	const keysArray = Object.keys(dataSource[0]).slice(0);
+	const keysArray = Object.keys(dataSource[0]).slice(1);
 	// get the value from the data source
-	const valueArray = Object.values(dataSource[0]).slice(0);
+	const valueArray = Object.values(dataSource[0]).slice(1);
 	// console.log(keysArray)
 	// console.log(valueArray)
 	// This will allow me to get around the Merchant Referrals graph having only 2 items.
