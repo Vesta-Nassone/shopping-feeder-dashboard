@@ -8,9 +8,10 @@ const propTypes = {
 	className: PropTypes.string,
 	cardTitle: PropTypes.string.isRequired,
 	children: PropTypes.node,
+	onClick: PropTypes.func,
 };
 
-export const Card = ({ className = "", children, cardTitle }) => {
+export const Card = ({ className = "", children, cardTitle, onClick}) => {
     return (
         /* The overlay trigger wraps around the Tooltip and act as the Call out box when mouse hovers on the card. */
 		<OverlayTrigger
@@ -23,7 +24,7 @@ export const Card = ({ className = "", children, cardTitle }) => {
 			placement="bottom"
         >
             {/* Render the card as a div with the icons and text as children. */}
-			<div className={`${className} ${"info-box"}`}>{children}</div>
+			<div className={`${className} ${"info-box"}`} onClick={onClick}>{children}</div>
 		</OverlayTrigger>
 	);
 };

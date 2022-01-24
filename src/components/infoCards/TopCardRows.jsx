@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Card } from "./Card";
 import "./TopCardRows.css";
+import { CardContext } from "../context/CardContext";
 
 export default function TopCardRows() {
+	// Keep the state of merchants and stores here
+	const [merchants, setMerchants] = useState(2);
+	const [stores, setStores] = useState(5);
+
+	// get the state from Context.
+	// This will allow the check variable to be passed to Graph for randomizing the data.
+	const [check, setCheck] = useContext(CardContext);
+
+	// Increment the store and merchant count when Button is clicked.
+	function increment() {
+		setStores((prevStore) => prevStore + 1);
+		setMerchants((prevMerchants) => prevMerchants + 1);
+	}
+	
+	// Resets the count to original when Add New Merchant is toggled.
+	function resetCount() {
+		setStores(5)
+		setMerchants(2)
+	}
+
+
 	/* This component will be a Bootstrap grid, that will hold the Top 2 rows of cards. 
     Grid is responsive, 1column for xs screens, 2columns for sm to mid and 5cols for lg and above.
+	Some of the data values are hard coded but thats alright for the scope of this project.
     */
 	return (
 		<div className="row mx-n5 row-cols-1 row-cols-sm-2 row-cols-lg-5 pb-4 gy-4">
@@ -15,7 +38,7 @@ export default function TopCardRows() {
 						<i className="bi bi-people" />
 					</span>
 					<div className="info-box-text">
-						<h6>20</h6>
+						<h6>{merchants}</h6>
 						<p>Merchants</p>
 					</div>
 				</Card>
@@ -26,7 +49,7 @@ export default function TopCardRows() {
 						<i className="bi bi-shop" />
 					</span>
 					<div className="info-box-text">
-						<h6>40</h6>
+						<h6>{stores}</h6>
 						<p>Stores</p>
 					</div>
 				</Card>
@@ -68,7 +91,10 @@ export default function TopCardRows() {
 
 			{/* Start of Second row */}
 			<div className="col px-2">
-				<Card cardTitle="Add New Merchant">
+				<Card cardTitle="Add New Merchant" onClick={(() => {
+					setCheck(!check);
+					check ? resetCount() : increment();
+				})}>
 					<span className="info-box-icon">
 						<i className="bi bi-plus" />
 					</span>
