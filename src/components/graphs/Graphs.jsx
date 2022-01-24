@@ -22,39 +22,6 @@ import { CardContext } from "../context/CardContext";
 const color = ["#8f8bda", "#82ca9d", "#b8d9f7", "#f6b339", "#90ab9f"];
 
 
-let randomizedBest = [];
-let randomizedLeast = [];
-let randomizedRef = [];
-for (let i = 0; i < 7; i++) {
-	let best = {
-		d: 7,
-		s1: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-		s2: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-		s3: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-		s4: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-		s5: Math.floor(Math.random() * (150 - 0 + 1) + 0),
-	};
-	let least = {
-		d: 7,
-		s1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-		s2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-		s3: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-		s4: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-		s5: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-	};
-	let ref = {
-		d: 2,
-		m1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-		m2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
-	};
-	randomizedBest.push(best);
-	randomizedLeast.push(least);
-	randomizedRef.push(ref);
-}
-
-console.log(bestPerformingStoresData);
-console.log(randomizedBest.keys());
-
 /* 
 	This method will dynamically create Line Charts so I don't have to hard code them.
  */
@@ -88,6 +55,41 @@ const createLineCharts = (dataSource) => {
 	// console.log(lineArray)
 	return lineArray;
 };
+
+/* Generate the random data to be displayed on toggle. */
+let randomizedBest = [];
+let randomizedLeast = [];
+let randomizedRef = [];
+for (let i = 0; i < 7; i++) {
+	let best = {
+		d: 7,
+		s1: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+		s2: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+		s3: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+		s4: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+		s5: Math.floor(Math.random() * (150 - 0 + 1) + 0),
+	};
+	let least = {
+		d: 7,
+		s1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+		s2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+		s3: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+		s4: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+		s5: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+	};
+	let ref = {
+		d: 2,
+		m1: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+		m2: Math.floor(Math.random() * (100 - 0 + 1) + 0),
+	};
+	randomizedBest.push(best);
+	randomizedLeast.push(least);
+	randomizedRef.push(ref);
+}
+
+console.log(bestPerformingStoresData);
+console.log(randomizedBest.keys());
+/* End of random data Generator */
 
 const createRandomCharts = (dataSource) => {
 	// get the keys from the data source
@@ -134,8 +136,10 @@ const createRandomCharts = (dataSource) => {
 	// console.log(lineArray)
 	return lineArray;
 };
-// createRandomCharts(referralsData)
+
+
 export default function Graphs() {
+	/* use the check toggle to control the data that will be displayed */
 	const [check] = useContext(CardContext);
 	// console.log(typeof(randomize));
 	return (
