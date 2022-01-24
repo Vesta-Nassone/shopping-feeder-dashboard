@@ -5,12 +5,6 @@ import { CardContext } from "../CardContext";
 
 export default function TopCardRows() {
 	const [merchants, setMerchants, stores, setStores] = useContext(CardContext)
-	// const [merchants, setMerch] = useState(2);
-	// const [stores, setStore] = useState(5);
-
-	// function incrementMerchants() {
-	// 	setMerch((prevMerch) => prevMerch + 1);
-	// }
 	function increment() {
 		setStores((prevStore) => prevStore + 1);
 		setMerchants((prevMerchants) => prevMerchants + 1);
