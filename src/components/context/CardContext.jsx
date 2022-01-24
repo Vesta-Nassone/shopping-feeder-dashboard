@@ -5,8 +5,6 @@ export const CardContext = createContext();
 
 /* The state of the stores and merchants will be managed here */
 export const CardProvider = (props) => {
-	const [merchants, setMerchants] = useState(2);
-	const [stores, setStores] = useState(5);
 	const [check, setCheck] = useState(false);
 	console.log(typeof check);
 
@@ -16,10 +14,6 @@ export const CardProvider = (props) => {
 		// And state can be managed from one central point.
 		<CardContext.Provider
 			value={[
-				merchants,
-				setMerchants,
-				stores,
-				setStores,
 				check,
 				setCheck,
 			]}
