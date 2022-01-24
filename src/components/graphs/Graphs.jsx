@@ -97,8 +97,8 @@ for (let i = 0; i < 7; i++) {
 	randomizedRef.push(ref);
 }
 
-console.log(bestPerformingStoresData);
-console.log(randomizedBest);
+// console.log(bestPerformingStoresData);
+// console.log(randomizedBest);
 /* End of random data Generator */
 
 const createRandomCharts = (dataSource) => {
@@ -189,7 +189,7 @@ export default function Graphs() {
 							<CartesianGrid strokeDasharray="3 3" />
 							<XAxis
 								dataKey={
-									Object.keys(bestPerformingStoresData[0])[0]
+									check?Object.keys(randomizedBest[0])[0]:Object.keys(bestPerformingStoresData[0])[0]
 								}
 							/>
 							<YAxis />
@@ -238,7 +238,7 @@ export default function Graphs() {
 							<CartesianGrid strokeDasharray="3 3" />
 							<XAxis
 								dataKey={
-									Object.keys(leastPerformingStoresData[0])[0]
+									check?Object.keys(randomizedBest[0])[0]:Object.keys(bestPerformingStoresData[0])[0]
 								}
 							/>
 							<YAxis />
@@ -274,7 +274,7 @@ export default function Graphs() {
 							}}
 						>
 							<CartesianGrid strokeDasharray="3 3" />
-							<XAxis dataKey={Object.keys(referralsData[0])[0]} />
+							<XAxis dataKey={check?Object.keys(randomizedBest[0])[0]:Object.keys(bestPerformingStoresData[0])[0]} />
 							<YAxis />
 							<Tooltip />
 							<Legend />
