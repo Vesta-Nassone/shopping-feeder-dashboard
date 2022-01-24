@@ -1,27 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Card } from "./Card";
 import "./TopCardRows.css";
 import { CardContext } from "../context/CardContext";
 
 export default function TopCardRows() {
-	const [
-		merchants,
-		setMerchants,
-		stores,
-		setStores,
-	] = useContext(CardContext);
-
+	// Keep the state of merchants and stores here
+	const [merchants, setMerchants] = useState(2);
+	const [stores, setStores] = useState(5);
+	
+	// get the state from Context.
+	// This will allow the check variable to be passed to Graph for randomizing the data.
 	const [check, setCheck] = useContext(CardContext);
+
+	// Increment the store and merchant count when Button is clicked.
 	function increment() {
 		setStores((prevStore) => prevStore + 1);
 		setMerchants((prevMerchants) => prevMerchants + 1);
 	}
-	// console.log(check)
+	
+	// Resets the count to original when Add New Merchant is toggled.
+	function resetCount() {
+		setStores(5)
+		setMerchants(2)
+	}
 
-	/* This function will handle the clicking of Add new Merchant. */
-	const handleOnClick = () => {
-		increment();
-	};
 
 	/* This component will be a Bootstrap grid, that will hold the Top 2 rows of cards. 
     Grid is responsive, 1column for xs screens, 2columns for sm to mid and 5cols for lg and above.
@@ -88,7 +90,10 @@ export default function TopCardRows() {
 
 			{/* Start of Second row */}
 			<div className="col px-2">
-				<Card cardTitle="Add New Merchant"  onClick={handleOnClick}>
+				<Card cardTitle="Add New Merchant" onClick={(() => {
+					setCheck(!check);
+					check ? increment() : resetCount();
+				})}>
 					<span className="info-box-icon">
 						<i className="bi bi-plus" />
 					</span>
