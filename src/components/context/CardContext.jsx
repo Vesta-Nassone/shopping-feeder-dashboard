@@ -7,13 +7,22 @@ export const CardContext = createContext();
 export const CardProvider = (props) => {
 	const [merchants, setMerchants] = useState(2);
 	const [stores, setStores] = useState(5);
+	const [check, setCheck] = useState(false);
+	// console.log(typeof randomize);
 
-    return (
-        // Wrap the ContextProvider around any child element.
-        // This allows the props to be passed down easily.
-        // And state can be managed from one central point.
+	return (
+		// Wrap the ContextProvider around any child element.
+		// This allows the props to be passed down easily.
+		// And state can be managed from one central point.
 		<CardContext.Provider
-			value={[merchants, setMerchants, stores, setStores]}
+			value={[
+				merchants,
+				setMerchants,
+				stores,
+				setStores,
+				check,
+				setCheck,
+			]}
 		>
 			{props.children}
 		</CardContext.Provider>
