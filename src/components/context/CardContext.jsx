@@ -6,7 +6,7 @@ export const CardContext = createContext();
 /* The state of the stores and merchants will be managed here */
 export const CardProvider = (props) => {
 	const [check, setCheck] = useState(false);
-	console.log(typeof check);
+	// console.log(typeof check);
 
 	return (
 		// Wrap the ContextProvider around any child element.
