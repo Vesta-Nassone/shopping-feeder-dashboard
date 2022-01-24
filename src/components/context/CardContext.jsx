@@ -8,7 +8,7 @@ export const CardProvider = (props) => {
 	const [merchants, setMerchants] = useState(2);
 	const [stores, setStores] = useState(5);
 	const [check, setCheck] = useState(false);
-	// console.log(typeof randomize);
+	console.log(typeof check);
 
 	return (
 		// Wrap the ContextProvider around any child element.
